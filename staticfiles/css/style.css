@@ -1,10 +1,103 @@
 .row {
   display: flex;
+  flex-wrap: wrap;
+  width: 100%;
 }
 
 .column {
-  flex: 50%;
-  padding: 10px;
-  height: 300px; /* Should be removed. Only for demonstration */
+  flex: 1;
+  padding: 30px;
+  margin: 30px; /* 调整外边距 */
 }
+
+.column-half {
+  flex: 1;
+  padding: 10px;
+  margin: 10px;
+  border-bottom: 1px solid #ccc; /* 添加一个底部边框以区分表单 */
+}
+
+/* 增加分隔栏的样式 */
+.column-separator {
+  border-right: 1px solid #ccc; /* 右侧边框来分隔两栏 */
+  margin-right: 20px; /* 右侧外边距 */
+  padding-right: 20px; /* 右侧内边距 */
+}
+
+/* 确保图片可以正确显示 */
+.column img {
+  max-width: 100%; /* 让图片宽度适应容器宽度 */
+  height: auto; /* 高度自动调整以保持图片比例 */
+  display: block; /* 避免出现下边距问题 */
+}
+
+.right {
+  flex: 1;
+  padding: 10px;
+  display: flex;
+  flex-direction: column; /* 使子项垂直排列 */
+}
+
+.form-container {
+  margin-bottom: 40px; /* 与结果部分分隔 */
+  width: 500px;
+}
+
+.form-container form {
+  margin-bottom: 15px; /* 表单之间的分隔 */
+}
+
+.result-container {
+  margin-top: 20px; /* 与生成按钮分隔 */
+}
+
+.result-text {
+  margin-bottom: 10px; /* 文本与结果框的分隔 */
+}
+
+#result {
+  border: 1px solid #ccc; /* 结果框的边框 */
+  min-height: 100px; /* 结果框的最小高度，根据需要调整 */
+  padding: 10px; /* 结果框内边距 */
+  /* 如果需要在结果框内部顶部留白，可以调整padding-top的值 */
+}
+
+
+/* 设置文本区域和文件上传的宽度 */
+input[type="file"],
+textarea,
+#result {
+  width: 100%; /* 这将使它们宽度一致，根据父容器的宽度 */
+  box-sizing: border-box; /* 防止padding和border影响最终宽度 */
+}
+
+/* 添加间距 */
+input[type="submit"],
+textarea,
+#result {
+  margin-top: 20px; /* 在元素上方增加空间 */
+}
+
+/* 文本区域和结果框的高度 */
+textarea,
+#result {
+  height: 150px; /* 或者任何根据您需求设置的值 */
+}
+
+/* 只允许垂直调整文本区域大小 */
+textarea {
+  resize: vertical;
+}
+
+/* 右侧栏顶部内容的样式 */
+.right-column-top {
+  margin-top: 100px; /* 调整这个值以匹配左侧图片的底边 */
+}
+
+/* 或者您可以直接给第一个表单添加上边距 */
+#fileForm {
+  margin-top: 100px; /* 调整这个值以匹配左侧图片的底边 */
+}
+
+
 
