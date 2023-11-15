@@ -10,7 +10,7 @@ from rest_framework.decorators import api_view, parser_classes
 from rest_framework.parsers import MultiPartParser, FormParser
 
 
-@api_view(['POST'])
+@api_view(['GET', 'POST'])
 @parser_classes([MultiPartParser, FormParser])
 def solve_problem(request):
     # 获取文本数据
@@ -29,4 +29,7 @@ def my_form_view(request):
     return render(request, 'form_template.html')
 
 
+def index(request):
+    # 你的逻辑代码
+    return render(request, 'myapp/index.html')
 # Create your views here.

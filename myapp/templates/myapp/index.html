@@ -1,0 +1,54 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Explainable AI</title>
+    <link rel="stylesheet" type="text/css" href="{% static 'css/style.css' %}">
+</head>
+<body>
+    <h1>Explainable AI</h1>
+    <div class="row">
+	<!-- Left column for image and text -->
+    	<div class="column">
+            <div class="row">
+           	 <div class="column column-separator">
+                	<img src="{% static 'images/exp_ai.jpg' %}" alt="Explainable AI Image" style="width:100%;">
+           	 </div>
+            </div>
+            <div class="row">
+           	 <div class="column column-separator">
+                     <p>Explainable AI (XAI) refers to artificial intelligence systems that are designed to be transparent and clear in their decision-making processes and outcomes. The goal of XAI is to provide sufficient information to allow human users to understand and trust the decisions made by AI systems. XAI is particularly important in high-stakes fields like healthcare, finance, and law enforcement, where understanding the basis of AI decisions is crucial for ethical and practical reasons. By making AI systems more interpretable, XAI aims to bridge the gap between human decision-making and AI, ensuring that AI technology can be used responsibly and effectively.</p>
+           	 </div>
+            </div>
+   	 </div>
+
+	<!-- Right column for forms -->
+	<div class="column right">
+  	    <div class="form-container">
+    		<form id="fileForm" class="right-column-top">
+      		    <label for="pddlFile">Please Upload Your PDDL File:</label>
+      		    <input type="file" id="pddlFile" name="pddlFile">
+      		    <input type="submit" value="Upload">
+    		</form>
+
+    		<form id="textInputForm">
+     	 	    <label for="planInput">Please Input Your Plan:</label>
+      		    <textarea id="planInput" name="planInput"></textarea>
+      		    <input type="submit" value="Generate">
+    		</form>
+
+		<div class="result-container">
+    		    <p class="result-text">Here shows the result:</p>
+    		    <div id="result">
+      			<!-- 结果将在这个容器中显示 -->
+    		    </div>
+  		</div>
+  	    </div>
+  
+	</div>
+
+    </div>
+    <script src="{% static 'myapp/js/script.js' %}"></script>
+</body>
+</html>
+
