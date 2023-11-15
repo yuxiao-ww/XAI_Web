@@ -1,0 +1,24 @@
+<!-- myapp/templates/form_template.html -->
+
+<form id="myForm" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    <input type="text" name="text_field">
+    <input type="file" name="file_field">
+    <input type="submit">
+</form>
+
+<script>
+    document.getElementById('myForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        var formData = new FormData(this);
+	
+	fetch('http://localhost:8000/api/solve', {
+ 	    method: 'POST',
+    	    body: formData
+	})
+	.then(response => response.json())
+    	.then(data => console.log(data))
+   	.catch(error => console.error(error));
+    });
+</script>

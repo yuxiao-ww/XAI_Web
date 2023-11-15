@@ -1,0 +1,11 @@
+django
+djangorestframework
+flask==1.1.2
+Jinja2==2.10.3
+markupsafe==1.1.1
+itsdangerous==1.1.0
+Werkzeug==0.16.1
+openai==0.27.7
+unified_planning==0.5.0
+python-sat==0.1.8.dev7
+gunicorn
