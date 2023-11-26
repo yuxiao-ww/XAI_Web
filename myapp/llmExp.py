@@ -1,7 +1,8 @@
 import openai
 
 
-openai.api_key = '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'
+# openai.api_key = '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'
+openai.api_key = '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'
 
 prefix = "convert those into natural language paragraph orderly. /n/n" \
          'Method: /n' \
@@ -39,7 +40,7 @@ query = 'Now do the same in the given order for the following plan: /n' \
 def completion_func_gpt(content):
     prompt = prefix + content
     completion = openai.ChatCompletion.create(
-        model='gpt-4',
+        model='gpt-3.5-turbo-0613',
         messages=[
             {"role": "user", "content": prompt}
         ]

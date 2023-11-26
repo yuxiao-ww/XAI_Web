@@ -2,8 +2,8 @@ import openai
 import os
 
 
-openai.api_key = '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'
-# openai.api_key = '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'
+# openai.api_key = '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'
+openai.api_key = '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'
 
 prefix = 'I am solving the planning problem. /n' \
          'I will give you some english sentences and you should extract the keywords in the english sentences, ' \
@@ -22,7 +22,7 @@ query = 'Now do the same and add the time steps in the given order for the follo
 def completion_func_gpt(content):
     prompt = prefix + content
     completion = openai.ChatCompletion.create(
-        model='gpt-4',
+        model='gpt-3.5-turbo-0613',
         messages=[
             {"role": "user", "content": prompt}
         ]
